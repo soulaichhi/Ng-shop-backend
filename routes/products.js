@@ -77,7 +77,7 @@ router.put('/:id',async (req, res)=> {
             numReviews: req.body.numReviews,
             isFeatured: req.body.isFeatured,
         },
-        { new: true}
+        { new: false}
     )
 
     if(!product)
