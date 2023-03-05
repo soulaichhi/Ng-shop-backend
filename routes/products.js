@@ -112,7 +112,7 @@ router.put('/:id', uploadOptions.single('image'),async (req, res)=> {
             name: req.body.name,
             description: req.body.description,
             richDescription: req.body.richDescription,
-            image: req.body.image,
+            image: imagePath,
             brand: req.body.brand,
             price: req.body.price,
             category: req.body.category,
@@ -124,10 +124,10 @@ router.put('/:id', uploadOptions.single('image'),async (req, res)=> {
         { new: false}
     )
 
-    if(!product)
+    if(!updatedProduct)
     return res.status(500).send('the product cannot be updated!')
 
-    res.send(product);
+    res.send(updatedProduct);
 })
 
 router.delete('/:id', (req, res)=>{
