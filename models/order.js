@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const orderSchema = mongoose.Schema({
     orderItems: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'OrderItems',
+        ref: 'OrderItem',
         required: true
     }],
     shippingAddress1: {
